@@ -8,10 +8,7 @@ export const createAction = (postData) => {
 	return async (dispatch) => {
 		try {
 			dispatch({ type: 'SET_LOADER' });
-			const { data } = await axios.post(
-				'http://localhost:5000/create',
-				postData
-			);
+			const { data } = await axios.post('/create', postData);
 			if (data.status === 'error') {
 				dispatch({ type: 'CLOSE_LOADER' });
 				dispatch({ type: 'ERRORS', payload: data.errors });
@@ -35,7 +32,7 @@ export const fetchPosts = (id) => {
 	return async (dispatch) => {
 		try {
 			dispatch({ type: 'SET_LOADER' });
-			const response = await axios.get(`http://localhost:5000/posts/${id}`);
+			const response = await axios.get(`/posts/${id}`);
 			console.log('login user posts:', response.data);
 			dispatch({ type: 'POSTS', payload: response.data.posts });
 			dispatch({ type: 'CLOSE_LOADER' });
@@ -48,9 +45,7 @@ export const allPosts = (currentPage) => {
 	return async (dispatch) => {
 		try {
 			dispatch({ type: 'SET_LOADER' });
-			const response = await axios.get(
-				`http://localhost:5000/allposts/${currentPage}`
-			);
+			const response = await axios.get(`allposts/${currentPage}`);
 			console.log('response: ', response.data);
 			dispatch({ type: 'CLOSE_LOADER' });
 			dispatch({
@@ -71,7 +66,7 @@ export const fetchPost = (slug) => {
 	return async (dispatch) => {
 		try {
 			dispatch({ type: 'SET_LOADER' });
-			const response = await axios.get(`http://localhost:5000/details/${slug}`);
+			const response = await axios.get(`/details/${slug}`);
 			console.log('details post: ', response.data);
 			dispatch({ type: 'CLOSE_LOADER' });
 			dispatch({ type: 'POST', payload: response.data.post[0] });
@@ -84,7 +79,7 @@ export const updatePost = (post) => {
 	return async (dispatch) => {
 		try {
 			dispatch({ type: 'SET_LOADER' });
-			const response = await axios.post('http://localhost:5000/update', post);
+			const response = await axios.post('/update', post);
 			dispatch({ type: 'CLOSE_LOADER' });
 			if (response.data.status === 'error') {
 				dispatch({ type: 'UPDATED_ERRORS', payload: response.data.errors });
@@ -106,7 +101,7 @@ export const deletePost = (id, userId) => {
 	return async (dispatch) => {
 		try {
 			dispatch({ type: 'SET_LOADER' });
-			const { data } = await axios.post(`http://localhost:5000/delete/${id}`);
+			const { data } = await axios.post(`/delete/${id}`);
 			dispatch({ type: 'CLOSE_LOADER' });
 			if (data.status === 'success') {
 				dispatch({ type: 'CLOSE_LOADER' });
