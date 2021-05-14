@@ -1,0 +1,20 @@
+/*
+* Mixins function
+*/
+@mixin bgImage($image) {
+  background: url($image);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@mixin media($width) {
+  @if ($width == 765px) {
+    @media (max-width: $width) {
+      @content;
+    }
+  }
+  @if ($width == 900px) {
+    @media (max-width: $width) {
+      @content;
+    }
+  }
+}

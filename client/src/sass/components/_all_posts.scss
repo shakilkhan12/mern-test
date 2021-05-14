@@ -1,0 +1,50 @@
+.posts {
+	margin: 120px 0;
+
+	&__author {
+		display: flex;
+		align-items: center;
+		span {
+			width: 30px;
+			height: 30px;
+			background: $primary;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: $white;
+			font-size: 13px;
+		}
+		&__name {
+			margin-left: 5px;
+			font-size: 13px;
+			font-weight: 500;
+			color: #292929;
+		}
+	}
+	&__body {
+		margin-top: 10px;
+		&__title {
+			text-decoration: none;
+			font-size: 22px;
+			font-weight: 700;
+			color: #222;
+		}
+		&__details {
+			color: #757575;
+			font-size: 15px;
+			margin: 6px 0;
+		}
+	}
+	&__footer {
+		font-size: 14px;
+		margin-top: 10px;
+	}
+	&__image {
+		width: 100%;
+		& img {
+			width: 100%;
+			height: auto;
+		}
+	}
+}

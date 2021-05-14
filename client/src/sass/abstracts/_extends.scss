@@ -1,0 +1,12 @@
+/*
+* SCSS/SASS Extends/Inheritance
+*/
+%flex-vertical {
+  display: flex;
+  align-items: center;
+}
+%flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

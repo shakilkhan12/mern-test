@@ -1,0 +1,26 @@
+// import base
+@import 'base/rest';
+
+// import abstracts
+@import 'abstracts/variables';
+@import 'abstracts/extends';
+@import 'abstracts/mixins';
+@import 'abstracts/responsive';
+
+// import utils
+@import 'utils/utils';
+
+// import layout
+@import 'layout/grid';
+
+// import components
+@import 'components/navbar';
+@import 'components/formBg';
+@import 'components/account';
+@import 'components/card';
+@import 'components/posts';
+@import 'components/create';
+@import 'components/all_posts';
+@import 'components/details';
+@import 'components/pagination';
+@import 'components/loader';

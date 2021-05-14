@@ -1,0 +1,5 @@
+.formBg {
+  width: 100%;
+  height: calc(100vh - 80px);
+  @include bgImage("/images/1.jpg");
+}
